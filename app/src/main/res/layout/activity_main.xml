@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Экран сверстан на скорую руку просто ради примера, пожалуйста не придирайтесь -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/item_example" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/background_stroke">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:textSize="@dimen/text_header_size"
+                    android:text="create pdf from any view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/width_stroke"
+                    android:background="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                <TextView
+                    android:id="@+id/tv_screenshot"
+                    style="@style/text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="example on root view"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/bt_from_any_view"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_from_shablom"
+                    style="@style/text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="example from shablon"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/bt_template_pdf"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/bt_from_any_view"
+                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_button"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="create"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                <Button
+                    android:id="@+id/bt_template_pdf"
+                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_button"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="create"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/bt_from_any_view"
+                    app:layout_constraintTop_toBottomOf="@+id/bt_from_any_view" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/text_view_header"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="create pdf from recycler view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/bt_rv_one_page"
+                    style="@style/text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="pdf on one page"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/bt_rv_on_one_page"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/bt_rv_on_one_page"
+                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_button"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="create"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <TextView
+                    android:id="@+id/tv_rv_split_into_pages"
+                    style="@style/text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="pdf split into pages"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/bt_rv_split_into_pages"
+                    app:layout_constraintStart_toStartOf="@+id/bt_rv_one_page" />
+
+                <Button
+                    android:id="@+id/bt_rv_split_into_pages"
+                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_button"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="create"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/bt_rv_on_one_page"
+                    app:layout_constraintTop_toBottomOf="@+id/bt_rv_on_one_page" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/text_view_header"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="util"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_select_folder"
+                    style="@style/text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="select folder"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/bt_select_folder"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/bt_select_folder"
+                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_button"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="select"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                <TextView
+                    android:id="@+id/tv_folder_name"
+                    style="@style/text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="name folder:"
+                    android:textColor="@color/text_alarm"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/bt_get_name"
+                    app:layout_constraintStart_toStartOf="@+id/tv_select_folder" />
+
+                <Button
+                    android:id="@+id/bt_get_name"
+                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_button"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/bt_select_folder"
+                    app:layout_constraintTop_toBottomOf="@+id/bt_select_folder" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
